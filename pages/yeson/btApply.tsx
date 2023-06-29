@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Modal from '../../components/ModalPractice';
 import ModalPortal from '../../components/ModalPortal';
+import Form from '../../components/Form';
 
 const Post = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -12,6 +13,7 @@ const Post = () => {
 
   return (
     <AppWrap>
+      <Form />
       <Button type="button" onClick={onClickButton}>
         신청하기
       </Button>

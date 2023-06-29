@@ -3,14 +3,15 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import sample from 'public/next.svg';
+import Layout from '../../components/Layout';
 import { useQuery, useMutation } from 'react-query';
 import axios from 'axios';
 
 const index = () => {
   const mutation = useMutation({
     mutationFn: () => {
-      return fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
+      return fetch('https://jsonplaceholder.typicode.com/posts/1', {
+        method: 'PUT',
         body: JSON.stringify({
           id: 1,
           title: 'foo22',
@@ -43,7 +44,7 @@ const index = () => {
   if (error) return 'An error has occurred: ';
 
   return (
-    <>
+    <Layout noHeader noFooter>
       <St.Header>
         소피 웨비들
         {arr.map((obj, index) => (
@@ -55,7 +56,7 @@ const index = () => {
         <Image src={sample} alt="샘플 이미지" />
       </St.Header>
       <button onClick={() => mutation.mutate()}>투두</button>
-    </>
+    </Layout>
   );
 };
 

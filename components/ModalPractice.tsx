@@ -18,7 +18,7 @@ function Modal({ onClose }: ModalProps) {
         </CloseButton>
         <Contents>
           <h1>신청이 완료되었습니다.</h1>
-          <Button onClick={handleClose}>Close</Button>
+          <Button onClick={handleClose}>확인</Button>
         </Contents>
       </ModalWrap>
     </Overlay>
